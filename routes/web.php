@@ -7,16 +7,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('adduser', [Usercontroller::class, 'adduser']);
-
-Route::view('home/profiles/user', 'home')->name('hm');
-
-Route::view('home/profiles/{name}', 'home')->name('user');
-
-Route::get('show', [Usercontroller::class, 'show']);
-Route::get('user', [Usercontroller::class, 'user']);
 
 
+
+Route::prefix('student')->group(function() {
+    Route::view('/home', 'home');
+    Route::get('/show', [Usercontroller::class, 'show']);
+    Route::get('/add', [Usercontroller::class, 'add']);
+
+});
+
+Route::prefix('student/india')->group(function() {
+    Route::view('/home', 'home');
+    Route::get('/show', [Usercontroller::class, 'show']);
+    Route::get('/add', [Usercontroller::class, 'add']);
+
+});
 
 
 ?>
