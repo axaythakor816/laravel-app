@@ -11,7 +11,7 @@ class Usercontroller extends Controller
             'email' => 'required | email',
             'username' => 'required | min:3 | max:10',
             // 'skill' => 'required',
-            'city' => 'required | min:3 | max:20 '
+            'city' => 'required | min:3 | max:20 | uppercase '
 
         ], [
             'username.required' => 'user Field can note be empty',

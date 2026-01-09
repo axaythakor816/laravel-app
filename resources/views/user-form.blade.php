@@ -9,11 +9,11 @@
 
     </div>
     <div class="input-wraper">
-        <input type="text" placeholder="enter email" value="{{ old('email') }}" name="email" id="email"">
+        <input type="text" placeholder="enter email" value="{{ old('email') }}" name="email" id="email" class="{{{ ($errors->first('email')?'input-error':'') }}}">
         <span class="error">@error('email'){{ $message }} @enderror</span>
     </div>
     <div class="input-wraper">
-        <input type="text" placeholder="enter city" name="city" value="{{ old('city') }}" id="city"">
+        <input type="text" placeholder="enter city" name="city" value="{{ old('city') }}" class="{{ ($errors->first('city')?'input-error':'') }}" id="city">
         <span class="error">@error('city'){{ $message }} @enderror</span>
     </div>
     {{-- <div class="checkbox">
@@ -43,7 +43,7 @@
     }
 
     .input-error {
-        border: 2px solid red !important;
+        border: 1px solid red !important;
         color: red !important;
 
     }
